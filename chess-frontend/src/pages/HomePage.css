@@ -1,0 +1,54 @@
+.home-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.banner {
+  background-color: var(--gray-medium);
+  padding: 50px;
+  color: white;
+  border-radius: 10px;
+}
+
+.banner h1 {
+  font-size: 3em;
+}
+
+.banner p {
+  font-size: 1.5em;
+}
+
+.scroll-container {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.scroll-container h2 {
+  margin-left: 20px;
+  font-size: 2em;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.card {
+  min-width: 250px;
+  background-color: var(--gray-dark);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 5px;
+}

@@ -1,0 +1,17 @@
+body {
+  background-color: var(--white);
+  color: var(--gray-dark);
+}
+
+.header {
+  background-color: var(--green-light);
+}
+
+.button {
+  background-color: var(--green-dark);
+  color: var(--white);
+}
+
+.footer {
+  background-color: var(--gray-medium);
+}
