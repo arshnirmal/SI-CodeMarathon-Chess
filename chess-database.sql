@@ -14,7 +14,7 @@ create table matches (
 	player1_id int not null references players(player_id),
 	player2_id int not null references players(player_id),
 	match_date date not null,
-	match_level varchar(20) not null check (match_level in ('international', 'national')),
+	match_level varchar(20) not null check (match_level in ('International', 'National')),
 	winner_id int references players(player_id)
 );
 
@@ -35,52 +35,53 @@ create table player_sponsors (
 	primary key (player_id, sponsor_id)
 );
 
-insert into players (first_name, last_name, country, current_world_ranking, total_matches_played)
-values 
-('magnus', 'carlsen', 'norway', 1, 100),
-('fabiano', 'caruana', 'usa', 2, 95),
-('ding', 'liren', 'china', 3, 90),
-('ian', 'nepomniachtchi', 'russia', 4, 85),
-('wesley', 'so', 'usa', 5, 80),
-('anish', 'giri', 'netherlands', 6, 78),
-('hikaru', 'nakamura', 'usa', 7, 75),
-('viswanathan', 'anand', 'india', 8, 120),
-('teimour', 'radjabov', 'azerbaijan', 9, 70),
-('levon', 'aronian', 'armenia', 10, 72);
+INSERT INTO players (first_name, last_name, country, current_world_ranking, total_matches_played)
+VALUES 
+('Magnus', 'Carlsen', 'Norway', 1, 100),
+('Fabiano', 'Caruana', 'USA', 2, 95),
+('Ding', 'Liren', 'China', 3, 90),
+('Ian', 'Nepomniachtchi', 'Russia', 4, 85),
+('Wesley', 'So', 'USA', 5, 80),
+('Anish', 'Giri', 'Netherlands', 6, 78),
+('Hikaru', 'Nakamura', 'USA', 7, 75),
+('Viswanathan', 'Anand', 'India', 8, 120),
+('Teimour', 'Radjabov', 'Azerbaijan', 9, 70),
+('Levon', 'Aronian', 'Armenia', 10, 72);
 
-insert into matches (player1_id, player2_id, match_date, match_level, winner_id)
-values 
-(1, 2, '2024-08-01', 'international', 1),
-(3, 4, '2024-08-02', 'international', 3),
-(5, 6, '2024-08-03', 'national', 5),
-(7, 8, '2024-08-04', 'international', 8),
-(9, 10, '2024-08-05', 'national', 10),
-(1, 3, '2024-08-06', 'international', 1),
-(2, 4, '2024-08-07', 'national', 2),
-(5, 7, '2024-08-08', 'international', 7),
-(6, 8, '2024-08-09', 'national', 8),
-(9, 1, '2024-08-10', 'international', 1);
+INSERT INTO matches (player1_id, player2_id, match_date, match_level, winner_id)
+VALUES 
+(1, 2, '2024-08-01', 'International', 1),
+(3, 4, '2024-08-02', 'International', 3),
+(5, 6, '2024-08-03', 'National', 5),
+(7, 8, '2024-08-04', 'International', 8),
+(9, 10, '2024-08-05', 'National', 10),
+(1, 3, '2024-08-06', 'International', 1),
+(2, 4, '2024-08-07', 'National', 2),
+(5, 7, '2024-08-08', 'International', 7),
+(6, 8, '2024-08-09', 'National', 8),
+(9, 1, '2024-08-10', 'International', 1);
 
-insert into sponsors (sponsor_name, industry, contact_email, contact_phone)
-values 
-('techchess', 'technology', 'contact@techchess.com', '123-456-7890'),
-('movemaster', 'gaming', 'info@movemaster.com', '234-567-8901'),
-('chessking', 'sports', 'support@chessking.com', '345-678-9012'),
-('smartmoves', 'ai', 'hello@smartmoves.ai', '456-789-0123'),
-('grandmasterfinance', 'finance', 'contact@grandmasterfinance.com', '567-890-1234');
+INSERT INTO sponsors (sponsor_name, industry, contact_email, contact_phone)
+VALUES 
+('TechChess', 'Technology', 'contact@techchess.com', '123-456-7890'),
+('MoveMaster', 'Gaming', 'info@movemaster.com', '234-567-8901'),
+('ChessKing', 'Sports', 'support@chessking.com', '345-678-9012'),
+('SmartMoves', 'AI', 'hello@smartmoves.ai', '456-789-0123'),
+('GrandmasterFinance', 'Finance', 'contact@grandmasterfinance.com', '567-890-1234');
 
-insert into player_sponsors (player_id, sponsor_id, sponsorship_amount, contract_start_date, contract_end_date)
-values 
-(1, 1, 500000.00, '2023-01-01', '2025-12-31'),
-(2, 2, 300000.00, '2023-06-01', '2024-06-01'),
-(3, 3, 400000.00, '2024-01-01', '2025-01-01'),
-(4, 4, 350000.00, '2023-03-01', '2024-03-01'),
-(5, 5, 450000.00, '2023-05-01', '2024-05-01'),
-(6, 1, 250000.00, '2024-02-01', '2025-02-01'),
-(7, 2, 200000.00, '2023-08-01', '2024-08-01'),
-(8, 3, 600000.00, '2023-07-01', '2025-07-01'),
-(9, 4, 150000.00, '2023-09-01', '2024-09-01'),
-(10, 5, 300000.00, '2024-04-01', '2025-04-01');
+INSERT INTO 
+	player_sponsors (player_id, sponsor_id, sponsorship_amount, contract_start_date, contract_end_date)
+VALUES 
+	(1, 1, 500000.00, '2023-01-01', '2025-12-31'),
+	(2, 2, 300000.00, '2023-06-01', '2024-06-01'),
+	(3, 3, 400000.00, '2024-01-01', '2025-01-01'),
+	(4, 4, 350000.00, '2023-03-01', '2024-03-01'),
+	(5, 5, 450000.00, '2023-05-01', '2024-05-01'),
+	(6, 1, 250000.00, '2024-02-01', '2025-02-01'),
+	(7, 2, 200000.00, '2023-08-01', '2024-08-01'),
+	(8, 3, 600000.00, '2023-07-01', '2025-07-01'),
+	(9, 4, 150000.00, '2023-09-01', '2024-09-01'),
+	(10, 5, 300000.00, '2024-04-01', '2025-04-01');
 
 -- 1. List the match details including the player names (both player1 and player2), match date, and match level for all International matches.
 select 

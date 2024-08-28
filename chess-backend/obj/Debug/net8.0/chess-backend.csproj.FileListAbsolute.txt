@@ -35,3 +35,4 @@ D:\ArshNirmal\CodeMarathon\chess\chess-backend\obj\Debug\net8.0\refint\chess-bac
 D:\ArshNirmal\CodeMarathon\chess\chess-backend\obj\Debug\net8.0\chess-backend.pdb
 D:\ArshNirmal\CodeMarathon\chess\chess-backend\obj\Debug\net8.0\chess-backend.genruntimeconfig.cache
 D:\ArshNirmal\CodeMarathon\chess\chess-backend\obj\Debug\net8.0\ref\chess-backend.dll
+D:\ArshNirmal\CodeMarathon\chess\chess-backend\obj\Debug\net8.0\chess-backend.sourcelink.json

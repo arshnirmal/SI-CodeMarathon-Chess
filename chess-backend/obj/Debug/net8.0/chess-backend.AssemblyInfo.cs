@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chess-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dde4e94ca4eded986205f03d58fe351bab6a98a")]
 [assembly: System.Reflection.AssemblyProductAttribute("chess-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chess-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

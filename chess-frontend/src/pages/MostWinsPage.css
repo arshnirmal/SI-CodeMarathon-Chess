@@ -1,0 +1,37 @@
+.player-performance-table {
+  background-color: var(--dark-gray); /* #4b4847 */
+  color: var(--light-text);
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.player-performance-table th,
+.player-performance-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.player-performance-table thead {
+  background-color: var(--green-dark); /* #4e7837 */
+  color: white;
+}
+
+.player-performance-table tbody tr:nth-child(even) {
+  background-color: var(--dark-gray-light); /* Slightly lighter shade */
+}
+
+.player-performance-table tbody tr:hover {
+  background-color: var(--green-light); /* #69923e */
+  color: white;
+}
+
+.player-performance-table th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.player-performance-table td {
+  font-size: 1em;
+}

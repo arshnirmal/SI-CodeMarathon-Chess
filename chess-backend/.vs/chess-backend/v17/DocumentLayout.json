@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\dataaccesslayers\\chessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:dataaccesslayers\\chessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\models\\playerperformance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:models\\playerperformance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\dataaccesslayers\\ichessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:dataaccesslayers\\ichessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\controllers\\chesscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:controllers\\chesscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\models\\playerperformance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:models\\playerperformance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\dataaccesslayers\\ichessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:dataaccesslayers\\ichessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\dataaccesslayers\\chessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:dataaccesslayers\\chessdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\models\\addmatchrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:models\\addmatchrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|d:\\arshnirmal\\codemarathon\\chess\\chess-backend\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01F48181-E990-4DE8-A18A-179D60ED7AFE}|chess-backend.csproj|solutionrelative:models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,60 +38,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 265,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerPerformance.cs",
+              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\PlayerPerformance.cs",
+              "RelativeDocumentMoniker": "Models\\PlayerPerformance.cs",
+              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\PlayerPerformance.cs",
+              "RelativeToolTip": "Models\\PlayerPerformance.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T11:38:48.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\Player.cs",
+              "RelativeDocumentMoniker": "Models\\Player.cs",
+              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\Player.cs",
+              "RelativeToolTip": "Models\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T11:14:51.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IChessDAO.cs",
+              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\DataAccessLayers\\IChessDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessLayers\\IChessDAO.cs",
+              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\DataAccessLayers\\IChessDAO.cs",
+              "RelativeToolTip": "DataAccessLayers\\IChessDAO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T07:04:16.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddMatchRequest.cs",
+              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\AddMatchRequest.cs",
+              "RelativeDocumentMoniker": "Models\\AddMatchRequest.cs",
+              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\AddMatchRequest.cs",
+              "RelativeToolTip": "Models\\AddMatchRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T07:03:43.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Match.cs",
+              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\Match.cs",
+              "RelativeDocumentMoniker": "Models\\Match.cs",
+              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\Match.cs",
+              "RelativeToolTip": "Models\\Match.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T06:52:41.668Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IChessDAO.cs",
-              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\DataAccessLayers\\IChessDAO.cs",
-              "RelativeDocumentMoniker": "DataAccessLayers\\IChessDAO.cs",
-              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\DataAccessLayers\\IChessDAO.cs",
-              "RelativeToolTip": "DataAccessLayers\\IChessDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T09:13:13.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ChessDAO.cs",
               "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\DataAccessLayers\\ChessDAO.cs",
               "RelativeDocumentMoniker": "DataAccessLayers\\ChessDAO.cs",
               "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\DataAccessLayers\\ChessDAO.cs",
               "RelativeToolTip": "DataAccessLayers\\ChessDAO.cs",
-              "ViewState": "AQIAAIUAAAAAAAAAAAAQwI8AAAAhAAAA",
+              "ViewState": "AQIAANcAAAAAAAAAAAAuwMUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T09:13:00.111Z",
+              "WhenOpened": "2024-08-28T06:52:46.443Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T09:37:19.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlayerPerformance.cs",
-              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\PlayerPerformance.cs",
-              "RelativeDocumentMoniker": "Models\\PlayerPerformance.cs",
-              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\PlayerPerformance.cs",
-              "RelativeToolTip": "Models\\PlayerPerformance.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T10:06:33.894Z"
             },
             {
               "$type": "Document",
@@ -101,33 +130,10 @@
               "RelativeDocumentMoniker": "Controllers\\ChessController.cs",
               "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Controllers\\ChessController.cs",
               "RelativeToolTip": "Controllers\\ChessController.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAqwCwAAABWAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAIwEwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T09:42:11.439Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-26T09:37:20.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddMatchRequest.cs",
-              "DocumentMoniker": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\AddMatchRequest.cs",
-              "RelativeDocumentMoniker": "Models\\AddMatchRequest.cs",
-              "ToolTip": "D:\\ArshNirmal\\CodeMarathon\\chess\\chess-backend\\Models\\AddMatchRequest.cs",
-              "RelativeToolTip": "Models\\AddMatchRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T09:02:43.195Z"
+              "WhenOpened": "2024-08-28T06:48:35.633Z",
+              "EditorCaption": ""
             }
           ]
         }

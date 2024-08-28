@@ -18,18 +18,20 @@ namespace chess_backend {
             builder.Services.AddScoped(
                 (provider) => new NpgsqlConnection(connectionString)
             );
-            builder.Services.AddCors(options => {
-                options.AddDefaultPolicy(builder => {
-                    builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
-                });
-                options.AddPolicy("FrontEnd", builder => {
-                    builder.WithOrigins("http://localhost:3000")
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
-                });
-            });
+            builder.Services.AddCors(
+                options => {
+                    options.AddDefaultPolicy(builder => {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+                    options.AddPolicy("FrontEnd", builder => {
+                        builder.WithOrigins("http://localhost:3000")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+                }
+            );
 
             var app = builder.Build();
 

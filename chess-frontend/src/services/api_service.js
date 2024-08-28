@@ -1,9 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:7098/api/Chess";
+const BASE_URL = "https://localhost:7098/api/Chess";
 
 export async function getPlayers() {
-  const response = await axios.get(`${BASE_URL}/players`);
+  const url = `${BASE_URL}/players`;
+  const response = await axios.get(url);
 
   try {
     if (response.status === 200) {
@@ -17,7 +18,8 @@ export async function getPlayers() {
 }
 
 export async function getMatches() {
-  const response = await axios.get(`${BASE_URL}/matches`);
+  const url = `${BASE_URL}/matches`;
+  const response = await axios.get(url);
 
   try {
     if (response.status === 200) {
@@ -31,7 +33,7 @@ export async function getMatches() {
 }
 
 export async function addMatch(match) {
-  const response = await axios.post(`${BASE_URL}/matches`, match);
+  const response = await axios.post(`${BASE_URL}/match`, match);
 
   try {
     if (response.status === 200 || response.status === 201) {
@@ -44,10 +46,9 @@ export async function addMatch(match) {
   }
 }
 
-export async function getPlayerByCountry({ country, isDesc }) {
-  const response = await axios.get(
-    `${BASE_URL}/players/by-country?country=${country}&isDesc=${isDesc}`
-  );
+export async function getPlayerByCountry(country, isDesc) {
+  const url = `${BASE_URL}/players/by-country?country=${country}&isDesc=${isDesc}`;
+  const response = await axios.get(url);
 
   try {
     if (response.status === 200) {

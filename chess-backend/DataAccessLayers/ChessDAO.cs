@@ -9,8 +9,164 @@ namespace chess_backend.DataAccessLayers {
             _connection = connection;
         }
 
+        public async Task<List<Player>> GetPlayers() {
+            string query = @"SELECT 
+                                player_id, first_name, last_name, country, current_world_ranking, total_matches_played
+                            FROM 
+                                chess.players";
+
+            List<Player> players = [];
+
+            try {
+                await _connection.OpenAsync();
+                var cmd = new NpgsqlCommand(query, _connection);
+
+                using(cmd) {
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    using(reader) {
+                        while(reader.Read()) {
+                            players.Add(
+                                new Player {
+                                    PlayerId = int.TryParse(reader["player_id"].ToString(), out int playerId) ? playerId : -1,
+                                    FirstName = reader["first_name"].ToString() ?? "null",
+                                    LastName = reader["last_name"].ToString() ?? "null",
+                                    Country = reader["country"].ToString() ?? "null",
+                                    CurrentWorldRanking = int.TryParse(reader["current_world_ranking"].ToString(), out int currentWorldRanking) ? currentWorldRanking : -1,
+                                    TotalMatchesPlayed = int.TryParse(reader["total_matches_played"].ToString(), out int totalMatchesPlayed) ? totalMatchesPlayed : -1
+                                }
+                            );
+                        }
+                    }
+                }
+            } catch(Exception e) {
+                Console.WriteLine(e);
+            } finally {
+                await _connection.CloseAsync();
+            }
+
+            return players;
+        }
+
+        public async Task<Player> GetPlayerById(int playerId) {
+            string query = @"SELECT 
+                                player_id, first_name, last_name, country, current_world_ranking, total_matches_played
+                            FROM 
+                                chess.players
+                            WHERE 
+                                player_id = @playerId";
+
+            Player player = null;
+
+            try {
+                await _connection.OpenAsync();
+                var cmd = new NpgsqlCommand(query, _connection);
+
+                using(cmd) {
+                    cmd.Parameters.AddWithValue("playerId", NpgsqlTypes.NpgsqlDbType.Integer, playerId);
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    using(reader) {
+                        if(reader.Read()) {
+                            player = new Player {
+                                PlayerId = int.TryParse(reader["player_id"].ToString(), out int id) ? id : -1,
+                                FirstName = reader["first_name"].ToString() ?? "null",
+                                LastName = reader["last_name"].ToString() ?? "null",
+                                Country = reader["country"].ToString() ?? "null",
+                                CurrentWorldRanking = int.TryParse(reader["current_world_ranking"].ToString(), out int currentWorldRanking) ? currentWorldRanking : -1,
+                                TotalMatchesPlayed = int.TryParse(reader["total_matches_played"].ToString(), out int totalMatchesPlayed) ? totalMatchesPlayed : -1
+                            };
+                        }
+                    }
+                }
+            } catch(Exception e) {
+                Console.WriteLine(e);
+            } finally {
+                await _connection.CloseAsync();
+            }
+
+            return player;
+        }
+
+        public async Task<List<String>> GetPlayerCountries() {
+            string query = @"SELECT DISTINCT country FROM chess.players";
+
+            List<String> countries = [];
+
+            try {
+                await _connection.OpenAsync();
+                var cmd = new NpgsqlCommand(query, _connection);
+
+                using(cmd) {
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    using(reader) {
+                        while(reader.Read()) {
+                            countries.Add(reader["country"].ToString() ?? "null");
+                        }
+                    }
+                }
+            } catch(Exception e) {
+                Console.WriteLine(e);
+            } finally {
+                await _connection.CloseAsync();
+            }
+
+            return countries;
+        }
+
+        public async Task<List<Match>> GetMatches() {
+            string query = @"SELECT 
+                                m.match_id,
+                                p.first_name || ' ' || p.last_name AS player1_name,
+                                p2.first_name || ' ' || p2.last_name AS player2_name,
+                                m.match_date,
+                                m.match_level,
+                                p3.first_name || ' ' || p3.last_name AS winner_name
+                            FROM
+                                chess.matches m
+                            LEFT JOIN
+                                chess.players p ON m.player1_id = p.player_id
+                            LEFT JOIN
+                                chess.players p2 ON m.player2_id = p2.player_id
+                            LEFT JOIN
+                                chess.players p3 ON m.winner_id = p3.player_id";
+
+            List<Match> matches = [];
+
+            try {
+                await _connection.OpenAsync();
+                var cmd = new NpgsqlCommand(query, _connection);
+
+                using(cmd) {
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    using(reader) {
+                        while(reader.Read()) {
+                            matches.Add(
+                                new Match {
+                                    MatchId = int.TryParse(reader["match_id"].ToString(), out int matchId) ? matchId : -1,
+                                    Player1Name = reader["player1_name"].ToString() ?? "null",
+                                    Player2Name = reader["player2_name"].ToString() ?? "null",
+                                    MatchDate = DateTime.TryParse(reader["match_date"].ToString(), out DateTime matchDate) ? matchDate : DateTime.MinValue,
+                                    MatchLevel = reader["match_level"].ToString() ?? "null",
+                                    WinnerName = reader["winner_name"].ToString() ?? "null"
+                                }
+                            );
+                        }
+                    }
+                }
+            } catch(Exception e) {
+                Console.WriteLine(e);
+            } finally {
+                await _connection.CloseAsync();
+            }
+
+            return matches;
+        }
+
         public async Task<bool> PlayerExists(int playerId) {
-            string query = "SELECT COUNT(*) FROM chess.players WHERE player_id = @playerId";
+            string query = "SELECT COUNT(*) FROM chess.players WHERE player_id = @        public async Task<bool> PlayerExists(int playerId) {\r\n";
 
             try {
                 await _connection.OpenAsync();
@@ -29,26 +185,26 @@ namespace chess_backend.DataAccessLayers {
             }
         }
 
-        public async Task<bool> AddMatch(AddMatchRequest request) {
-            bool playersExists = await PlayerExists(request.Player1Id) && await PlayerExists(request.Player2Id);
+        public async Task<bool> AddMatch(AddMatchRequest match) {
+            bool playersExists = await PlayerExists(match.Player1Id) && await PlayerExists(match.Player2Id);
             if(!playersExists) {
                 return false;
             }
 
             string query = @"INSERT INTO 
-                        chess.matches (player1_id, player2_id, match_date, match_level, winner_id) 
-                    VALUES 
-                        (@player1Id, @player2Id, @matchDate, @matchLevel, @winnerId)";
+                                chess.matches (player1_id, player2_id, match_date, match_level, winner_id) 
+                            VALUES 
+                                (@player1Id, @player2Id, @matchDate, @matchLevel, @winnerId)";
 
             try {
                 await _connection.OpenAsync();
                 var cmd = new NpgsqlCommand(query, _connection);
                 using(cmd) {
-                    cmd.Parameters.AddWithValue("player1Id", NpgsqlTypes.NpgsqlDbType.Integer, request.Player1Id);
-                    cmd.Parameters.AddWithValue("player2Id", NpgsqlTypes.NpgsqlDbType.Integer, request.Player2Id);
-                    cmd.Parameters.AddWithValue("matchDate", NpgsqlTypes.NpgsqlDbType.Date, request.MatchDate);
-                    cmd.Parameters.AddWithValue("matchLevel", NpgsqlTypes.NpgsqlDbType.Text, request.MatchLevel);
-                    cmd.Parameters.AddWithValue("winnerId", request.WinnerId.HasValue ? (object)request.WinnerId.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("player1Id", NpgsqlTypes.NpgsqlDbType.Integer, match.Player1Id);
+                    cmd.Parameters.AddWithValue("player2Id", NpgsqlTypes.NpgsqlDbType.Integer, match.Player2Id);
+                    cmd.Parameters.AddWithValue("matchDate", NpgsqlTypes.NpgsqlDbType.Date, match.MatchDate);
+                    cmd.Parameters.AddWithValue("matchLevel", NpgsqlTypes.NpgsqlDbType.Text, match.MatchLevel);
+                    cmd.Parameters.AddWithValue("winnerId", NpgsqlTypes.NpgsqlDbType.Integer, match.WinnerId);
 
                     await cmd.ExecuteNonQueryAsync();
                     return true;
@@ -214,9 +370,8 @@ namespace chess_backend.DataAccessLayers {
             } finally {
                 await _connection.CloseAsync();
             }
-            
+
             return players;
         }
-
     }
 }

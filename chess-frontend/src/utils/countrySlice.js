@@ -1,26 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  countries: [],
-  loading: false,
-  error: null,
-};
-
 const countrySlice = createSlice({
   name: "country",
-  initialState,
+  initialState: {
+    countries: [],
+  },
   reducers: {
-    fetchCountriesStart(state) {
-      state.loading = true;
-      state.error = null;
-    },
-    fetchCountriesSuccess(state, action) {
-      state.loading = false;
+    setCountries: (state, action) => {
       state.countries = action.payload;
-    },
-    fetchCountriesFailure(state, action) {
-      state.loading = false;
-      state.error = action.payload;
     },
   },
 });
@@ -31,4 +18,6 @@ export const {
   fetchCountriesFailure,
 } = countrySlice.actions;
 
+export const countriesData = (state) => state.country.countries;
 export default countrySlice.reducer;
+export const { setCountries } = countrySlice.actions;

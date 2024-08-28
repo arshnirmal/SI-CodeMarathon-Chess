@@ -1,47 +1,79 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCountries } from "../services/api_service";
-import {
-  fetchCountriesFailure,
-  fetchCountriesStart,
-  fetchCountriesSuccess,
-} from "../utils/countrySlice";
+import PlayerCard from "../components/PlayerCard";
+import { getAllCountries, getPlayerByCountry } from "../services/api_service";
+import { countriesData, setCountries } from "../utils/countrySlice";
+import "./SearchPlayersPage.css";
 
 const SearchPlayersPage = () => {
   const dispatch = useDispatch();
-  const countries = useSelector((state) => state.country.countries);
-  const countryStatus = useSelector((state) => state.country.status);
-  const error = useSelector((state) => state.country.error);
-
-  const fetchCountries = async () => {
-    dispatch(fetchCountriesStart());
-    try {
-      const data = await getAllCountries();
-      dispatch(fetchCountriesSuccess(data));
-    } catch (e) {
-      dispatch(fetchCountriesFailure(e.message));
-    }
-  };
+  const countries = useSelector(countriesData);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchCountries());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [countryStatus, dispatch]);
+    const fetchApiData = async () => {
+      const countriesdata = await getAllCountries();
+      dispatch(setCountries(countriesdata));
+    };
+
+    fetchApiData();
+  }, [dispatch]);
+
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
+  };
+
+  const countriesList = countries.map((country) => {
+    return (
+      <option key={country} value={country}>
+        {country}
+      </option>
+    );
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(selectedCountry);
+
+    const res = await getPlayerByCountry(selectedCountry, false);
+    console.log(res);
+    setPlayers(res);
+
+    setSelectedCountry("");
+  };
 
   return (
     <div>
-      <h1>Search Players</h1>
-      {countryStatus === "loading" ? (
-        <p>Loading...</p>
-      ) : countryStatus === "failed" ? (
-        <p>{error}</p>
-      ) : (
-        <ul>
-          {countries.map((country) => (
-            <li key={country}>{country}</li>
-          ))}
-        </ul>
-      )}
+      <h3 className="text-center m-3">Search Players</h3>
+      <div className="d-flex justify-content-center">
+        <select
+          className="form-select w-50"
+          value={selectedCountry}
+          onChange={handleCountryChange}
+        >
+          <option value="">Select Country</option>
+          {countriesList}
+        </select>
+
+        <button
+          className="btn btn-primary mx-4"
+          onClick={handleSubmit}
+          disabled={!selectedCountry}
+        >
+          Search
+        </button>
+      </div>
+
+      <div className="players-container mt-4 justify-content-center mt-4 d-flex flex-wrap">
+        <div className="w-75">
+          {players.length > 0 ? (
+            players.map((player) => <PlayerCard player={player} />)
+          ) : (
+            <h5 className="text-center no-players-text">No Players Found</h5>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

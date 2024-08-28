@@ -1,22 +1,35 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getMatches, getPlayers } from "../services/api_service";
+import { playersData, setPlayers } from "../utils/playerSlice";
 import "./HomePage.css";
 
 function Home() {
-  const [players, setPlayers] = useState([]);
+  const dispatch = useDispatch();
+  const players = useSelector(playersData);
   const [matches, setMatches] = useState([]);
 
-  const fetchApiData = async () => {
-    const playerdata = await getPlayers();
-    setPlayers(playerdata);
-
-    const matchdata = await getMatches();
-    setMatches(matchdata);
-  };
-
   useEffect(() => {
+    const fetchApiData = async () => {
+      const playerdata = await getPlayers();
+      dispatch(setPlayers(playerdata));
+
+      const matchdata = await getMatches();
+      setMatches(matchdata);
+    };
+
     fetchApiData();
-  }, []);
+  }, [dispatch]);
+
+  const renderplayers = (player) => {
+    return (
+      <div className="card" key={player.id}>
+        <img src={player.imageUrl} alt={player.firstName} height={"150px"} />
+        <h3>{player.firstName + " " + player.lastName}</h3>
+        <p>World Ranking: {player.currentWorldRanking}</p>
+      </div>
+    );
+  };
 
   return (
     <div className="home-container m-4">
@@ -28,12 +41,7 @@ function Home() {
       <div className="scroll-container">
         <h2>Top Players</h2>
         <div className="scrolling-wrapper">
-          {players.map((player) => (
-            <div className="card" key={player.id}>
-              <h3>{player.name}</h3>
-              <p>World Ranking: {player.ranking}</p>
-            </div>
-          ))}
+          {players.map((player) => renderplayers(player))}
         </div>
       </div>
 

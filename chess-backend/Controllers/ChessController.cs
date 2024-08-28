@@ -10,9 +10,13 @@ namespace chess_backend.Controllers {
             _repository = repository;
         }
 
-        [HttpPost("match", Name = "AddMatch")]
-        public async Task<IActionResult> AddMatch(AddMatchRequest request) {
-            bool result = await _repository.AddMatch(request);
+        [HttpPost("matches", Name = "AddMatch")]
+        public async Task<IActionResult> AddMatch([FromBody] AddMatchRequest match) {
+            if(match == null) {
+                return BadRequest();
+            }
+
+            bool result = await _repository.AddMatch(match);
             if(result) {
                 return Ok();
             } else {
@@ -47,6 +51,46 @@ namespace chess_backend.Controllers {
                 return Ok(players);
             } else {
                 return NotFound("No players found.");
+            }
+        }
+
+        [HttpGet("players", Name = "GetPlayers")]
+        public async Task<IActionResult> GetPlayers() {
+            List<Player> players = await _repository.GetPlayers();
+            if(players.Count > 0) {
+                return Ok(players);
+            } else {
+                return NotFound("No players found.");
+            }
+        }
+
+        [HttpGet("player/{playerId}", Name = "GetPlayerById")]
+        public async Task<IActionResult> GetPlayerById(int playerId) {
+            Player player = await _repository.GetPlayerById(playerId);
+            if(player != null) {
+                return Ok(player);
+            } else {
+                return NotFound("Player not found.");
+            }
+        }
+
+        [HttpGet("players/countries", Name = "GetPlayerCountries")]
+        public async Task<IActionResult> GetPlayerCountries() {
+            List<String> countries = await _repository.GetPlayerCountries();
+            if(countries.Count > 0) {
+                return Ok(countries);
+            } else {
+                return NotFound("No countries found.");
+            }
+        }
+
+        [HttpGet("matches", Name = "GetMatches")]
+        public async Task<IActionResult> GetMatches() {
+            List<Match> matches = await _repository.GetMatches();
+            if(matches.Count > 0) {
+                return Ok(matches);
+            } else {
+                return NotFound("No matches found.");
             }
         }
     }

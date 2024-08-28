@@ -1,0 +1,105 @@
+.text-center {
+  color: #2c2b29;
+}
+
+.form-select {
+  border: 2px solid #69923e;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #4b4847;
+}
+
+.form-select:focus {
+  border-color: #4e7837;
+  box-shadow: 0 0 0 2px rgba(105, 146, 62, 0.25);
+}
+
+.btn-primary {
+  background-color: var(--gray-dark);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--gray-medium);
+}
+
+.card {
+  border: 1px solid #4b4847;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #2c2b29;
+  margin: 0.5rem 0;
+}
+
+.card-title {
+  color: #69923e;
+}
+
+.card-text {
+  color: #4b4847;
+}
+
+.no-players-text {
+  color: #2c2b29;
+}
+
+.player-card {
+  background-color: var(--gray-dark);
+  color: var(--white);
+  border: 1px solid var(--gray-medium);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+}
+
+.player-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.player-card-subtitle {
+  font-size: 1.2em;
+  color: var(--white);
+}
+
+.player-card-text {
+  font-size: 1em;
+}
+
+.player-card-info {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: var(--white);
+}
+
+.player-card-image {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.player-image {
+  border-radius: 10px;
+  object-fit: cover;
+  height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .player-card {
+    margin: 10px 0;
+  }
+
+  .player-image {
+    height: 200px;
+  }
+}
